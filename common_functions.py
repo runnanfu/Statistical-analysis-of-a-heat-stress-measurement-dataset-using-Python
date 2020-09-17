@@ -107,19 +107,19 @@ def draw_scatter(data1,data2,ax,xlabel,ylabel,unit):
 def draw_interval(data, ax):
 #   xquantx = ((np.quantile(data, 0.05), np.quantile(data, 0.95)))
     data_mean = data.mean()
-    data_std = data.std()
-    n=len(data)
-    data_se = data_std/np.sqrt(n)
-    confi_inte = stats.t.interval(0.95, len(data)-1, data_mean, data_se)
+    data_std = np.std(data, ddof = 1)
+    # n=len(data)
+    # data_se = data_std/np.sqrt(n)
+    confi_inte = stats.norm.interval(0.95, data_mean, data_std)
     ax.axvline(confi_inte[0],color='r',linewidth = 0.5)
     ax.axvline(confi_inte[1],color='r',linewidth = 0.5)
 
 def save_interval(data):
     data_mean = data.mean(axis=0)
-    data_std = data.std(axis=0)
-    n=data.shape[0]
-    data_se = data_std/np.sqrt(n)
-    confi_inte = stats.t.interval(0.95, n-1, data_mean, data_se)
+    data_std = np.std(data,ddof = 1,axis=0)
+    # n=data.shape[0]
+    # data_se = data_std/np.sqrt(n)
+    confi_inte = stats.norm.interval(0.95,  data_mean, data_std)
     return confi_inte
 
 def creat_df(data,label):
