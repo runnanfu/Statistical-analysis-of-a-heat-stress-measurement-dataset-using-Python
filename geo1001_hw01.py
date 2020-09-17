@@ -14,23 +14,23 @@ from common_functions import *
 
 #########################################################################################
 # ## lesson A1.1
-# print(mean(data_A))
-# print(mean(data_B))
-# print(mean(data_C))
-# print(mean(data_D))
-# print(mean(data_E))
+print(mean(data_A))
+print(mean(data_B))
+print(mean(data_C))
+print(mean(data_D))
+print(mean(data_E))
 
-# print(var(data_A))
-# print(var(data_B))
-# print(var(data_C))
-# print(var(data_D))
-# print(var(data_E))
+print(var(data_A))
+print(var(data_B))
+print(var(data_C))
+print(var(data_D))
+print(var(data_E))
 
-# print(std(data_A))
-# print(std(data_B))
-# print(std(data_C))
-# print(std(data_D))
-# print(std(data_E))
+print(std(data_A))
+print(std(data_B))
+print(std(data_C))
+print(std(data_D))
+print(std(data_E))
 
 #########################################################################################
 # ## lesson A1.2 # histograms for the 5 sensors Temperature values
@@ -277,69 +277,69 @@ from common_functions import *
 
 # #########################################################################################
 # ## lesson A4.1 # CDF for all the sensors and for variables Temperature and Wind Speed
-fig = plt.figure(figsize=(18,18))
-ax1 = fig.add_subplot(521)
-ax2 = fig.add_subplot(522)
-ax3 = fig.add_subplot(523)
-ax4 = fig.add_subplot(524)
-ax5 = fig.add_subplot(525)
-ax6 = fig.add_subplot(526)
-ax7 = fig.add_subplot(527)
-ax8 = fig.add_subplot(528)
-ax9 = fig.add_subplot(529)
-ax10 = fig.add_subplot(5,2,10)
+# fig = plt.figure(figsize=(18,18))
+# ax1 = fig.add_subplot(521)
+# ax2 = fig.add_subplot(522)
+# ax3 = fig.add_subplot(523)
+# ax4 = fig.add_subplot(524)
+# ax5 = fig.add_subplot(525)
+# ax6 = fig.add_subplot(526)
+# ax7 = fig.add_subplot(527)
+# ax8 = fig.add_subplot(528)
+# ax9 = fig.add_subplot(529)
+# ax10 = fig.add_subplot(5,2,10)
     
-# sensor A
-draw_CDF(WS_A, 'A_Wind Speed [m/s]',50,ax1)
-draw_interval(WS_A, ax1)
-draw_CDF(TEMP_A, 'A_Temperature [($^\circ$C)]',50,ax2)
-draw_interval(TEMP_A, ax2)
+# # sensor A
+# draw_CDF(WS_A, 'A_Wind Speed [m/s]',50,ax1)
+# draw_interval(WS_A, ax1)
+# draw_CDF(TEMP_A, 'A_Temperature [($^\circ$C)]',50,ax2)
+# draw_interval(TEMP_A, ax2)
 
-# sensor B
-draw_CDF(WS_B, 'B_Wind Speed [m/s]',50,ax3)
-draw_interval(WS_B, ax3)
-draw_CDF(TEMP_B, 'B_Temperature [($^\circ$C)]',50,ax4)
-draw_interval(TEMP_B, ax4)
+# # sensor B
+# draw_CDF(WS_B, 'B_Wind Speed [m/s]',50,ax3)
+# draw_interval(WS_B, ax3)
+# draw_CDF(TEMP_B, 'B_Temperature [($^\circ$C)]',50,ax4)
+# draw_interval(TEMP_B, ax4)
 
-# sensor C
-draw_CDF(WS_C, 'C_Wind Speed [m/s]',50,ax5)
-draw_interval(WS_C, ax5)
-draw_CDF(TEMP_C, 'C_Temperature [($^\circ$C)]',50,ax6)
-draw_interval(TEMP_C, ax6)
+# # sensor C
+# draw_CDF(WS_C, 'C_Wind Speed [m/s]',50,ax5)
+# draw_interval(WS_C, ax5)
+# draw_CDF(TEMP_C, 'C_Temperature [($^\circ$C)]',50,ax6)
+# draw_interval(TEMP_C, ax6)
 
-# sensor D
-draw_CDF(WS_D, 'D_Wind Speed [m/s]',50,ax7)
-draw_interval(WS_D, ax7)
-draw_CDF(TEMP_D, 'D_Temperature [($^\circ$C)]',50,ax8)
-draw_interval(TEMP_D, ax8)
+# # sensor D
+# draw_CDF(WS_D, 'D_Wind Speed [m/s]',50,ax7)
+# draw_interval(WS_D, ax7)
+# draw_CDF(TEMP_D, 'D_Temperature [($^\circ$C)]',50,ax8)
+# draw_interval(TEMP_D, ax8)
 
-# sensor E
-draw_CDF(WS_E, 'E_Wind Speed [m/s]',50,ax9)
-draw_interval(WS_E, ax9)
-draw_CDF(TEMP_E, 'E_Temperature [($^\circ$C)]',50,ax10)
-draw_interval(TEMP_E, ax10)
+# # sensor E
+# draw_CDF(WS_E, 'E_Wind Speed [m/s]',50,ax9)
+# draw_interval(WS_E, ax9)
+# draw_CDF(TEMP_E, 'E_Temperature [($^\circ$C)]',50,ax10)
+# draw_interval(TEMP_E, ax10)
 
-fig.suptitle('CDF for Temperature and Wind Speed',fontsize=13,y=1)
-fig.tight_layout()
-plt.savefig('./figure12.jpg')
-# plt.show()
+# fig.suptitle('CDF for Temperature and Wind Speed',fontsize=13,y=1)
+# fig.tight_layout()
+# plt.savefig('./figure12.jpg')
+# # plt.show()
 
 # #########################################################################################
-# ## lesson A4.1 # save 95% confidence intervals to csv
-# df_A = creat_df(data_A,'A')
-# df_B = creat_df(data_B,'B')
-# df_C = creat_df(data_C,'C')
-# df_D = creat_df(data_D,'D')
-# df_E = creat_df(data_E,'E')
+## lesson A4.1 # save 95% confidence intervals to csv
+df_A = creat_df(data_A,'A')
+df_B = creat_df(data_B,'B')
+df_C = creat_df(data_C,'C')
+df_D = creat_df(data_D,'D')
+df_E = creat_df(data_E,'E')
 
-# result = (((df_A.join(df_B)).join(df_C)).join(df_D)).join(df_E)
+result = (((df_A.join(df_B)).join(df_C)).join(df_D)).join(df_E)
 
-# result.index=['Wind direction [deg]','Wind speed [m/s]','Crosswind Speed [m/s]','Headwind Speed [m/s]',\
-#           'Temperature [deg C]','Globe Temperature [deg C]','Wind chill [deg C]','Relative humidity [%]',\
-#           'Heat Stress Index [deg C]','Dew Point [deg C]','Psychro Wet Bulb Temperature [deg C]',\
-#          'Station pressure [mb]','Barometric pressure [mb]','Altitude [m]','Density Altitude [m]',\
-#          'NA Wet Bulb Tempterature [deg C]','WBGT [deg C]','TWL [w/m^2]','Direction, Mag [deg]']
+result.index=['Wind direction [deg]','Wind speed [m/s]','Crosswind Speed [m/s]','Headwind Speed [m/s]',\
+          'Temperature [deg C]','Globe Temperature [deg C]','Wind chill [deg C]','Relative humidity [%]',\
+          'Heat Stress Index [deg C]','Dew Point [deg C]','Psychro Wet Bulb Temperature [deg C]',\
+         'Station pressure [mb]','Barometric pressure [mb]','Altitude [m]','Density Altitude [m]',\
+         'NA Wet Bulb Tempterature [deg C]','WBGT [deg C]','TWL [w/m^2]','Direction, Mag [deg]']
 
-# outputpath= 'C:/FRN/TUDELFT/Q1/GEO1001_Mathematics/hw01/FRN/confidence_interval.csv'
-# result.to_csv(outputpath,index=True,header=True)
+outputpath= 'C:/FRN/TUDELFT/Q1/GEO1001_Mathematics/hw01/FRN/confidence_interval.csv'
+result.to_csv(outputpath,index=True,header=True)
     
