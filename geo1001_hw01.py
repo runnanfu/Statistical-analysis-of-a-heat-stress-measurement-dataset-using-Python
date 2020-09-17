@@ -326,20 +326,20 @@ print(std(data_E))
 
 # #########################################################################################
 ## lesson A4.1 # save 95% confidence intervals to csv
-df_A = creat_df(data_A,'A')
-df_B = creat_df(data_B,'B')
-df_C = creat_df(data_C,'C')
-df_D = creat_df(data_D,'D')
-df_E = creat_df(data_E,'E')
+# df_A = creat_df(data_A,'A')
+# df_B = creat_df(data_B,'B')
+# df_C = creat_df(data_C,'C')
+# df_D = creat_df(data_D,'D')
+# df_E = creat_df(data_E,'E')
 
-result = (((df_A.join(df_B)).join(df_C)).join(df_D)).join(df_E)
+# result = (((df_A.join(df_B)).join(df_C)).join(df_D)).join(df_E)
 
-result.index=['Wind direction [deg]','Wind speed [m/s]','Crosswind Speed [m/s]','Headwind Speed [m/s]',\
-          'Temperature [deg C]','Globe Temperature [deg C]','Wind chill [deg C]','Relative humidity [%]',\
-          'Heat Stress Index [deg C]','Dew Point [deg C]','Psychro Wet Bulb Temperature [deg C]',\
-         'Station pressure [mb]','Barometric pressure [mb]','Altitude [m]','Density Altitude [m]',\
-         'NA Wet Bulb Tempterature [deg C]','WBGT [deg C]','TWL [w/m^2]','Direction, Mag [deg]']
+# result.index=['Wind direction [deg]','Wind speed [m/s]','Crosswind Speed [m/s]','Headwind Speed [m/s]',\
+#           'Temperature [deg C]','Globe Temperature [deg C]','Wind chill [deg C]','Relative humidity [%]',\
+#           'Heat Stress Index [deg C]','Dew Point [deg C]','Psychro Wet Bulb Temperature [deg C]',\
+#          'Station pressure [mb]','Barometric pressure [mb]','Altitude [m]','Density Altitude [m]',\
+#          'NA Wet Bulb Tempterature [deg C]','WBGT [deg C]','TWL [w/m^2]','Direction, Mag [deg]']
 
-outputpath= 'C:/FRN/TUDELFT/Q1/GEO1001_Mathematics/hw01/FRN/confidence_interval.csv'
-result.to_csv(outputpath,index=True,header=True)
+# # outputpath= 'C:/FRN/TUDELFT/Q1/GEO1001_Mathematics/hw01/FRN/confidence_interval.csv'
+# # result.to_csv(outputpath,index=True,header=True)
     
