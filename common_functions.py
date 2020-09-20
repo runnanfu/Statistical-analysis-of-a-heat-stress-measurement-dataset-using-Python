@@ -56,21 +56,28 @@ def draw_PMF(data,xlabel,ax):
         c = sample.value_counts()
         p = c/len(sample)
         return p
-    df = pmf(data.astype(float))
-    c = df.sort_index()
-    ax.bar(c.index,c,width=0.1, color='blue', alpha=0.5)
+    df = pmf(data)
+    df1 = df.to_frame()
+    df1.reset_index(inplace=True)
+    df1 = df1.astype(float)
+    c = df1.sort_values(by=['index'])
+    ax.bar(c.iloc[ : ,0],c.iloc[ : ,1],width=0.1, facecolor='lightblue',edgecolor='k', alpha=0.5)
+    # df = pmf(data.astype(float))
+    # c = df.sort_index()
+    # ax.bar(c.index,c,width=0.1, color='blue', alpha=0.5)
     ax.set_xlabel(xlabel,fontsize=fs)
     ax.set_ylabel('PMF',fontsize=fs)
-    ax.set_xticks(ax.get_xticks()[:10])
     ax.tick_params(labelsize=fs)
     ax.yaxis.grid(True)
     
 def draw_PDF(data,xlabel,nb,ax):
     fs = 10
-    ax.hist(x=data, bins=nb, density=True, facecolor='lightblue',edgecolor = 'black', alpha=0.7)
+    y , edges, _  =ax.hist(x=data, bins=nb, density=True,color='lightblue', alpha=0.7,label = 'Histogram with Densities')
+    midpoint = 0.5*(edges[1:]+edges[:-1])
+    ax.plot(midpoint,y, color='blue', linewidth=1.5, alpha=0.7, label = 'PDF')
     #sns.distplot(data, bins=nb, color='b',ax=ax)
     ax.set_xlabel(xlabel, fontsize=fs)
-    ax.set_ylabel('PDF')
+    ax.set_ylabel('Probability Density')
     ax.tick_params(labelsize=fs)
     ax.yaxis.grid(True)
 
@@ -85,7 +92,7 @@ def draw_CDF(data,xlabel,nb,ax):
 
 def draw_KDE(data,xlabel,ax):
     fs = 10
-    sns.kdeplot(data, ax=ax ,color='b',label = 'kde')
+    sns.kdeplot(data, ax=ax ,color='r',label = 'KDE')
     ax.tick_params(labelsize=fs)
     ax.yaxis.grid(True)
     
@@ -115,8 +122,8 @@ def draw_interval(data, ax):
     ax.axvline(confi_inte[1],color='r',linewidth = 0.5)
 
 def save_interval(data):
-    data_mean = data.mean(axis=0)
-    data_std = np.std(data,ddof = 1,axis=0)
+    data_mean = data.mean(axis=1)
+    data_std = np.std(data,ddof = 1,axis=1)
     # n=data.shape[0]
     # data_se = data_std/np.sqrt(n)
     confi_inte = stats.norm.interval(0.95,  data_mean, data_std)
@@ -129,6 +136,10 @@ def creat_df(data,label):
         a.append(i)    
     for i in save_interval(data)[1]:
         b.append(i)
-    c ={label+"_confidence_interval_lower" : a,
-       label+"_confidence_interval_upper" : b}
+    c ={label+"_lower boundary" : a,
+       label+"_upper boundary" : b}
     return pd.DataFrame(c)
+
+def hy_test(data1,data2):
+    t, p_two= stats.ttest_ind(data1, data2, equal_var=False)
+    return p_two

@@ -14,6 +14,7 @@ from common_functions import *
 df_A = (pd.read_excel("../data/HEAT - A_final.xls",header=None)).drop(axis=0, index=[0,1,2,3,4], columns = [0])
 data_A = df_A.values.astype(float)
 
+
 df_B = (pd.read_excel("../data/HEAT - B_final.xls",header=None)).drop(axis=0, index=[0,1,2,3,4], columns = [0])
 data_B = df_B.values.astype(float)
 
@@ -37,6 +38,7 @@ WS_B = df_B [2].values.astype(float)
 WS_C = df_C [2].values.astype(float)
 WS_D = df_D [2].values.astype(float)
 WS_E = df_E [2].values.astype(float)
+
 
 CS_A = df_A [3].values.astype(float)  
 CS_B = df_B [3].values.astype(float)

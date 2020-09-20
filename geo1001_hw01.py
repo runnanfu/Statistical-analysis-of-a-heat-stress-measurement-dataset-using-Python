@@ -14,23 +14,24 @@ from common_functions import *
 
 #########################################################################################
 # ## lesson A1.1
-print(mean(data_A))
-print(mean(data_B))
-print(mean(data_C))
-print(mean(data_D))
-print(mean(data_E))
+# np.set_printoptions(suppress=True)
+# print(mean(data_A))
+# print(mean(data_B))
+# print(mean(data_C))
+# print(mean(data_D))
+# print(mean(data_E))
 
-print(var(data_A))
-print(var(data_B))
-print(var(data_C))
-print(var(data_D))
-print(var(data_E))
+# print(var(data_A))
+# print(var(data_B))
+# print(var(data_C))
+# print(var(data_D))
+# print(var(data_E))
 
-print(std(data_A))
-print(std(data_B))
-print(std(data_C))
-print(std(data_D))
-print(std(data_E))
+# print(std(data_A))
+# print(std(data_B))
+# print(std(data_C))
+# print(std(data_D))
+# print(std(data_E))
 
 #########################################################################################
 # ## lesson A1.2 # histograms for the 5 sensors Temperature values
@@ -53,7 +54,7 @@ print(std(data_E))
 
 # fig.suptitle('Histograms for 5 sensors Temperature (bins=50)',fontsize=15,y=1)
 # fig.tight_layout()
-# plt.savefig('./figure1.jpg')
+## plt.savefig('./figure1.jpg')
 # plt.show()
 
 # #########################################################################################
@@ -71,7 +72,7 @@ print(std(data_E))
 # plt.legend()
 # fig.suptitle('Frequency Poligons for 5 sensors Temperature (bins=27)',fontsize=15,y=1)
 # fig.tight_layout()
-# plt.savefig('./figure2.jpg')
+## plt.savefig('./figure2.jpg')
 # plt.show()
 
 # #########################################################################################
@@ -84,40 +85,43 @@ print(std(data_E))
 
 # fig.suptitle('Boxplots for Wind Speed, Wind Direction and Temperature',fontsize=15,y=1)
 # fig.tight_layout()
-# plt.savefig('./figure3.jpg')
+## plt.savefig('./figure3.jpg')
 # plt.show()
 
 # #########################################################################################
-# ##lesson A2.1# plot pmf pdf cdf 
-# fig = plt.figure(figsize=(18,12))
-# ax1 = fig.add_subplot(321)
-# ax2 = fig.add_subplot(322)
-# ax3 = fig.add_subplot(323)
-# ax4 = fig.add_subplot(324)
-# ax5 = fig.add_subplot(325)
+##lesson A2.1# plot pmf pdf cdf 
+fig = plt.figure(figsize=(18,12))
+ax1 = fig.add_subplot(321)
+ax2 = fig.add_subplot(322)
+ax3 = fig.add_subplot(323)
+ax4 = fig.add_subplot(324)
+ax5 = fig.add_subplot(325)
 
-# # nb = int(2 * (len(TEMP_A)**(1/3)))
-# nb = 100
+# nb = int(2 * (len(TEMP_A)**(1/3)))
+nb = 100
 
 # #plot PMF
-# draw_PMF(df_B[5],'A_Temperature ($^\circ$C)',ax1)
+# draw_PMF(df_A[5],'A_Temperature ($^\circ$C)',ax1)
 # draw_PMF(df_B[5],'B_Temperature ($^\circ$C)',ax2)
-# draw_PMF(df_B[5],'C_Temperature ($^\circ$C)',ax3)
-# draw_PMF(df_B[5],'D_Temperature ($^\circ$C)',ax4)
-# draw_PMF(df_B[5],'E_Temperature ($^\circ$C)',ax5)
+# draw_PMF(df_C[5],'C_Temperature ($^\circ$C)',ax3)
+# draw_PMF(df_D[5],'D_Temperature ($^\circ$C)',ax4)
+# draw_PMF(df_E[5],'E_Temperature ($^\circ$C)',ax5)
 # fig.suptitle('PMF for Temperature',fontsize=15,y=1)
 # fig.tight_layout()
-# plt.savefig('./figure4.jpg')
+## plt.savefig('./figure4.jpg')
+# plt.show()
 
-# # plot PDF
-# draw_PDF(TEMP_A,'A_Temperature ($^\circ$C)',nb, ax1)
-# draw_PDF(TEMP_B,'B_Temperature ($^\circ$C)',nb, ax2)
-# draw_PDF(TEMP_C,'C_Temperature ($^\circ$C)',nb, ax3)
-# draw_PDF(TEMP_D,'D_Temperature ($^\circ$C)',nb, ax4)
-# draw_PDF(TEMP_E,'E_Temperature ($^\circ$C)',nb, ax5)
-# fig.suptitle('PDF for Temperature',fontsize=15,y=1)
-# fig.tight_layout()
+# plot PDF
+draw_PDF(TEMP_A,'A_Temperature ($^\circ$C)',nb, ax1)
+draw_PDF(TEMP_B,'B_Temperature ($^\circ$C)',nb, ax2)
+draw_PDF(TEMP_C,'C_Temperature ($^\circ$C)',nb, ax3)
+draw_PDF(TEMP_D,'D_Temperature ($^\circ$C)',nb, ax4)
+draw_PDF(TEMP_E,'E_Temperature ($^\circ$C)',nb, ax5)
+fig.suptitle('PDF for Temperature',fontsize=15,y=1)
+plt.legend()
+fig.tight_layout()
 # plt.savefig('./figure5.jpg')
+plt.show()
 
 # # plot CDF
 # draw_CDF(TEMP_A,'A_Temperature ($^\circ$C)',nb,ax1)
@@ -127,9 +131,8 @@ print(std(data_E))
 # draw_CDF(TEMP_E,'E_Temperature ($^\circ$C)',nb,ax5)
 # fig.suptitle('CDF for Temperature',fontsize=15,y=1)
 # fig.tight_layout()
-# plt.savefig('./figure6.jpg')
-
-# # plt.show()
+## plt.savefig('./figure6.jpg')
+# plt.show()
 
 # #########################################################################################
 # ##lesson A2.2# WS PDF&kernel
@@ -157,8 +160,8 @@ print(std(data_E))
 
 # fig.suptitle('PDF & KDE for Wind Speed',fontsize=15,y=1)
 # fig.tight_layout()
-# plt.savefig('./figure7.jpg')
-# # plt.show()
+# # plt.savefig('./figure7.jpg')
+# plt.show()
 
 # #########################################################################################
 # ##lesson A3.1# scatter plot for Temperature, Wet Bulb Globe Temperature (WBGT), Crosswind Speed. 
@@ -188,7 +191,7 @@ print(std(data_E))
 # draw_scatter(TEMP_D,TEMP_E,ax10,'TEMP_D','TEMP_E','($^\circ$C)')
 # fig.suptitle('Temperature Scatter Plot',fontsize=13,y=1)
 # fig.tight_layout()
-# plt.savefig('./figure8.jpg')
+## plt.savefig('./figure8.jpg')
 # # plt.show()
 
 # # WBGT
@@ -205,7 +208,7 @@ print(std(data_E))
 
 # fig.suptitle('Wet Bulb Globe Temperature (WBGT) Scatter Plot',fontsize=13,y=1)
 # fig.tight_layout()
-# plt.savefig('./figure9.jpg')
+## plt.savefig('./figure9.jpg')
 # # plt.show()
 
 # # CS
@@ -221,7 +224,7 @@ print(std(data_E))
 # draw_scatter(CS_D,CS_E,ax10,'CS_D','CS_E','($^\circ$C)')
 # fig.suptitle('Crosswind Speed Scatter Plot',fontsize=13,y=1)
 # fig.tight_layout()
-# plt.savefig('./figure10.jpg')
+## plt.savefig('./figure10.jpg')
 # # plt.show()
 
 # #########################################################################################
@@ -264,7 +267,7 @@ print(std(data_E))
 
 # fig.suptitle('Scatter plot with Pearson’s  and Spearmann’s rank coefficients between 5 sensors ',fontsize=15,y=1)
 # fig.tight_layout()
-# plt.savefig('./figure11.jpg')
+## plt.savefig('./figure11.jpg')
 # # plt.show()
 
 # # # a = [CS_AB,CS_AC,CS_AD,CS_AE,CS_BC,CS_BD,CS_BE,CS_CD,CS_CE,CS_DE]
@@ -321,25 +324,34 @@ print(std(data_E))
 
 # fig.suptitle('CDF for Temperature and Wind Speed',fontsize=13,y=1)
 # fig.tight_layout()
-# plt.savefig('./figure12.jpg')
+## plt.savefig('./figure12.jpg')
 # # plt.show()
 
 # #########################################################################################
 ## lesson A4.1 # save 95% confidence intervals to csv
-# df_A = creat_df(data_A,'A')
-# df_B = creat_df(data_B,'B')
-# df_C = creat_df(data_C,'C')
-# df_D = creat_df(data_D,'D')
-# df_E = creat_df(data_E,'E')
+# df_A = creat_df(np.row_stack((WS_A, TEMP_A)),'A')
+# df_B = creat_df(np.row_stack((WS_B, TEMP_B)),'B')
+# df_C = creat_df(np.row_stack((WS_C, TEMP_C)),'C')
+# df_D = creat_df(np.row_stack((WS_D, TEMP_D)),'D')
+# df_E = creat_df(np.row_stack((WS_E, TEMP_E)),'E')
 
 # result = (((df_A.join(df_B)).join(df_C)).join(df_D)).join(df_E)
 
-# result.index=['Wind direction [deg]','Wind speed [m/s]','Crosswind Speed [m/s]','Headwind Speed [m/s]',\
-#           'Temperature [deg C]','Globe Temperature [deg C]','Wind chill [deg C]','Relative humidity [%]',\
-#           'Heat Stress Index [deg C]','Dew Point [deg C]','Psychro Wet Bulb Temperature [deg C]',\
-#          'Station pressure [mb]','Barometric pressure [mb]','Altitude [m]','Density Altitude [m]',\
-#          'NA Wet Bulb Tempterature [deg C]','WBGT [deg C]','TWL [w/m^2]','Direction, Mag [deg]']
+# result.index=['Wind speed [m/s]','Temperature [deg C]']
 
-# # outputpath= 'C:/FRN/TUDELFT/Q1/GEO1001_Mathematics/hw01/FRN/confidence_interval.csv'
-# # result.to_csv(outputpath,index=True,header=True)
-    
+# outputpath= 'C:/FRN/TUDELFT/Q1/GEO1001_Mathematics/hw01/FRN/confidence_interval.csv'
+# result.to_csv(outputpath,index=True,header=True)
+
+# #########################################################################################
+## lesson A4.2  # Test the hypothesis
+# print('P-value for sensors E & D for temperature =', hy_test(TEMP_E,TEMP_D))
+# print('P-value for sensors E & D for Wind Speed =', hy_test(WS_E,WS_D))
+
+# print('P-value for sensors D & C for temperature =', hy_test(TEMP_D,TEMP_C))
+# print('P-value for sensors D & C for Wind Speed =', hy_test(WS_D,WS_C))
+
+# print('P-value for sensors C & B for temperature =', hy_test(TEMP_C,TEMP_B))
+# print('P-value for sensors C & B for Wind Speed =', hy_test(WS_C,WS_B))
+
+# print('P-value for sensors B & A for temperature =', hy_test(TEMP_B,TEMP_A))
+# print('P-value for sensors B & A for Wind Speed =', hy_test(WS_B,WS_A))
