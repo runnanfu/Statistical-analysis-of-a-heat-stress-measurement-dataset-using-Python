@@ -1,1 +1,1 @@
-# Statistical-analysis-of-a-heat-stress-measurement-dataset-using-Python
+# Statistical-analysis-using-Python
