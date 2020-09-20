@@ -13,7 +13,7 @@ from readDATA import *
 from common_functions import *
 
 #########################################################################################
-# ## lesson A1.1
+## lesson A1.1
 # np.set_printoptions(suppress=True)
 # print(mean(data_A))
 # print(mean(data_B))
@@ -58,7 +58,7 @@ from common_functions import *
 # plt.show()
 
 # #########################################################################################
-# ## lesson A1.3 #frequency poligons for the 5 sensors Temperature values overlap
+## lesson A1.3 #frequency poligons for the 5 sensors Temperature values overlap
 # fig = plt.figure(figsize=(18,6))
 # ax = fig.add_subplot(111)
 # nb = int(2 * (len(TEMP_A)**(1/3)))
@@ -72,11 +72,11 @@ from common_functions import *
 # plt.legend()
 # fig.suptitle('Frequency Poligons for 5 sensors Temperature (bins=27)',fontsize=15,y=1)
 # fig.tight_layout()
-## plt.savefig('./figure2.jpg')
+# # plt.savefig('./figure2.jpg')
 # plt.show()
 
 # #########################################################################################
-# ##lesson A1.4 boxplot for: Wind Speed, Wind Direction and Temperature.
+##lesson A1.4 boxplot for: Wind Speed, Wind Direction and Temperature.
 # fig, ((ax1,ax2,ax3))=plt.subplots(nrows=1,ncols=3,figsize=(18,6))
 
 # draw_boxplot((WS_A, WS_B, WS_C, WS_D, WS_E),'Wind Speed [m/s]',ax1)
@@ -85,20 +85,20 @@ from common_functions import *
 
 # fig.suptitle('Boxplots for Wind Speed, Wind Direction and Temperature',fontsize=15,y=1)
 # fig.tight_layout()
-## plt.savefig('./figure3.jpg')
+# # plt.savefig('./figure3.jpg')
 # plt.show()
 
 # #########################################################################################
-##lesson A2.1# plot pmf pdf cdf 
-fig = plt.figure(figsize=(18,12))
-ax1 = fig.add_subplot(321)
-ax2 = fig.add_subplot(322)
-ax3 = fig.add_subplot(323)
-ax4 = fig.add_subplot(324)
-ax5 = fig.add_subplot(325)
+# ##lesson A2.1# plot pmf pdf cdf 
+# fig = plt.figure(figsize=(18,12))
+# ax1 = fig.add_subplot(321)
+# ax2 = fig.add_subplot(322)
+# ax3 = fig.add_subplot(323)
+# ax4 = fig.add_subplot(324)
+# ax5 = fig.add_subplot(325)
 
-# nb = int(2 * (len(TEMP_A)**(1/3)))
-nb = 100
+# # nb = int(2 * (len(TEMP_A)**(1/3)))
+# nb = 100
 
 # #plot PMF
 # draw_PMF(df_A[5],'A_Temperature ($^\circ$C)',ax1)
@@ -108,20 +108,20 @@ nb = 100
 # draw_PMF(df_E[5],'E_Temperature ($^\circ$C)',ax5)
 # fig.suptitle('PMF for Temperature',fontsize=15,y=1)
 # fig.tight_layout()
-## plt.savefig('./figure4.jpg')
+# # plt.savefig('./figure4.jpg')
 # plt.show()
 
-# plot PDF
-draw_PDF(TEMP_A,'A_Temperature ($^\circ$C)',nb, ax1)
-draw_PDF(TEMP_B,'B_Temperature ($^\circ$C)',nb, ax2)
-draw_PDF(TEMP_C,'C_Temperature ($^\circ$C)',nb, ax3)
-draw_PDF(TEMP_D,'D_Temperature ($^\circ$C)',nb, ax4)
-draw_PDF(TEMP_E,'E_Temperature ($^\circ$C)',nb, ax5)
-fig.suptitle('PDF for Temperature',fontsize=15,y=1)
-plt.legend()
-fig.tight_layout()
-# plt.savefig('./figure5.jpg')
-plt.show()
+# # plot PDF
+# draw_PDF(TEMP_A,'A_Temperature ($^\circ$C)',nb, ax1)
+# draw_PDF(TEMP_B,'B_Temperature ($^\circ$C)',nb, ax2)
+# draw_PDF(TEMP_C,'C_Temperature ($^\circ$C)',nb, ax3)
+# draw_PDF(TEMP_D,'D_Temperature ($^\circ$C)',nb, ax4)
+# draw_PDF(TEMP_E,'E_Temperature ($^\circ$C)',nb, ax5)
+# fig.suptitle('PDF for Temperature',fontsize=15,y=1)
+# plt.legend()
+# fig.tight_layout()
+# # plt.savefig('./figure5.jpg')
+# plt.show()
 
 # # plot CDF
 # draw_CDF(TEMP_A,'A_Temperature ($^\circ$C)',nb,ax1)
@@ -131,7 +131,7 @@ plt.show()
 # draw_CDF(TEMP_E,'E_Temperature ($^\circ$C)',nb,ax5)
 # fig.suptitle('CDF for Temperature',fontsize=15,y=1)
 # fig.tight_layout()
-## plt.savefig('./figure6.jpg')
+# # plt.savefig('./figure6.jpg')
 # plt.show()
 
 # #########################################################################################
@@ -267,16 +267,8 @@ plt.show()
 
 # fig.suptitle('Scatter plot with Pearson’s  and Spearmann’s rank coefficients between 5 sensors ',fontsize=15,y=1)
 # fig.tight_layout()
-## plt.savefig('./figure11.jpg')
-# # plt.show()
-
-# # # a = [CS_AB,CS_AC,CS_AD,CS_AE,CS_BC,CS_BD,CS_BE,CS_CD,CS_CE,CS_DE]
-# # # b = [CS_AB_sp,CS_AC_sp,CS_AD_sp,CS_AE_sp,CS_BC_sp,CS_BD_sp,CS_BE_sp,CS_CD_sp,CS_CE_sp,CS_DE_sp]
-# # # c ={"pearson" : a,
-# # #    "spearman" : b}
-# # # df=pd.DataFrame(c)
-# # # df.index=['AB','AC','AD','AE','BC','BD','BE','CD','CE','DE']
-# # # print(df)
+# # plt.savefig('./figure11.jpg')
+# plt.show()
 
 # #########################################################################################
 # ## lesson A4.1 # CDF for all the sensors and for variables Temperature and Wind Speed
@@ -328,7 +320,7 @@ plt.show()
 # # plt.show()
 
 # #########################################################################################
-## lesson A4.1 # save 95% confidence intervals to csv
+# # lesson A4.1 # save 95% confidence intervals to csv
 # df_A = creat_df(np.row_stack((WS_A, TEMP_A)),'A')
 # df_B = creat_df(np.row_stack((WS_B, TEMP_B)),'B')
 # df_C = creat_df(np.row_stack((WS_C, TEMP_C)),'C')
@@ -343,7 +335,7 @@ plt.show()
 # result.to_csv(outputpath,index=True,header=True)
 
 # #########################################################################################
-## lesson A4.2  # Test the hypothesis
+# # lesson A4.2  # Test the hypothesis
 # print('P-value for sensors E & D for temperature =', hy_test(TEMP_E,TEMP_D))
 # print('P-value for sensors E & D for Wind Speed =', hy_test(WS_E,WS_D))
 
@@ -355,3 +347,51 @@ plt.show()
 
 # print('P-value for sensors B & A for temperature =', hy_test(TEMP_B,TEMP_A))
 # print('P-value for sensors B & A for Wind Speed =', hy_test(WS_B,WS_A))
+
+# #########################################################################################
+# # Bonus question
+import time
+df_A = (pd.read_excel("../data/HEAT - A_final.xls",header=None)).drop(axis=0, index=[0,1,2,3,4])
+df_B = (pd.read_excel("../data/HEAT - B_final.xls",header=None)).drop(axis=0, index=[0,1,2,3,4])
+df_C = (pd.read_excel("../data/HEAT - C_final.xls",header=None)).drop(axis=0, index=[0,1,2,3,4])
+df_D = (pd.read_excel("../data/HEAT - D_final.xls",header=None)).drop(axis=0, index=[0,1,2,3,4])
+df_E = (pd.read_excel("../data/HEAT - E_final.xls",header=None)).drop(axis=0, index=[0,1,2,3,4])
+df_ABCDE = pd.concat([df_A,df_B,df_C,df_D,df_E],sort=True)
+
+def find_day(dataframe, label):
+    data_TIME = dataframe[0].values.astype(str)
+    df_TEMP =  pd.DataFrame(dataframe[5].values.astype(float))
+    df_TEMP.columns = ['TEMP']
+
+    TIME_A = []
+    for i in data_TIME:
+        timeArray = time.strptime(i, "%Y-%m-%d %H:%M:%S")
+        dt_new = time.strftime("%Y%m%d-%H:%M:%S",timeArray)
+        NEW_i = dt_new[ :8]
+        TIME_A.append(NEW_i)  
+    df_TIME = pd.DataFrame(TIME_A)
+    df_TIME.columns = ['TIME']
+
+    df = df_TIME.join(df_TEMP)
+
+    gp_col = 'TIME'
+    df_mean = df.groupby(gp_col)['TEMP'].mean()
+    df_mean = pd.DataFrame(df_mean.reset_index())
+    array_TIME = np.array(df_mean['TIME'])
+    array_MEAN = np.array(df_mean['TEMP'])
+
+    data_mean = np.vstack((array_TIME,array_MEAN))
+
+    hottest_line = np.where(data_mean == np.max(data_mean[1]))
+    hottest_day = data_mean[0,hottest_line[1]]
+    coolest_line = np.where(data_mean == np.min(data_mean[1]))
+    coolest_day = data_mean[0,coolest_line[1]]
+    print(label,'the hottest_day:',hottest_day)
+    print(label,'the coolest_day:',coolest_day)
+    
+find_day(df_A, 'Sensor A')  
+find_day(df_B, 'Sensor B')
+find_day(df_C, 'Sensor C')
+find_day(df_D, 'Sensor D')
+find_day(df_E, 'Sensor E')
+find_day(df_ABCDE, 'All Sensors')
